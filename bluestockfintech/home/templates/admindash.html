@@ -33,22 +33,24 @@
       .circle {
         border-radius: 50%;
         text-align: center;
-        line-height: 80px;
+        line-height: 40px;
         color: white;
-        font-size: 20px;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
       .circle-small {
-        width: 80px;
-        height: 80px;
+        width: 110px;
+        height: 110px;
       }
       .circle-medium {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
       }
       .circle-large {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
       }
       .bg-orange {
         background-color: #ff9900;
@@ -59,6 +61,10 @@
       .bg-purple {
         background-color: #9900cc;
       }
+
+      .bg-grey {
+        background-color: rgb(225, 223, 223);
+      }
       .sidebar {
         height: calc(100vh - 48px);
         width: 20%;
@@ -68,6 +74,9 @@
       .dashboard-image {
         width: 100%;
         height: auto;
+      }
+      .right {
+        width: 100%;
       }
     </style>
   </head>
@@ -142,20 +151,20 @@
         </ul>
       </div>
 
-      <div>
+      <div class="right">
         <main role="main" class="main-content">
           <nav
             class="navbar navbar-expand-lg navbar-light bg-white"
             style="padding-left: 20px; padding-right: 20px"
           >
             <div class="container-fluid">
-              <form class="d-flex">
+              <form class="d-flex rounded-3">
                 <div
-                  class="input-group custom-input-group"
+                  class="input-group custom-input-group bg-grey"
                   style="width: 600px; padding-left: 20px"
                 >
                   <input
-                    class="form-control"
+                    class="form-control bg-transparent"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
@@ -180,7 +189,7 @@
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item dropdown">
                     <a
-                      class="nav-link dropdown-toggle"
+                      class="nav-link dropdown-toggle d-flex gap-2 align-items-center"
                       href="#"
                       id="navbarDropdown"
                       role="button"
@@ -188,16 +197,15 @@
                       aria-expanded="false"
                     >
                       <!-- {% comment %} -->
-                      <img src="user-profile.jpg" alt="User" />
+                      <img
+                        src="/ipo/static/ipo/assets/img/accounts.png"
+                        alt="User"
+                        class="rounded-circle"
+                        width="25"
+                        height="25"
+                      />
 
-                      <div class="user-profile">
-                        <div
-                          id="user-profile-placeholder"
-                          class="placeholder-profile"
-                        >
-                          JD
-                        </div>
-                      </div>
+                      <div class="user-profile"></div>
                       <span class="username">Hi, Vishal</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -218,7 +226,7 @@
         </main>
 
         <!-- {% comment %} -->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <main role="main" class="px-4">
           <!-- {% endcomment %} -->
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
@@ -230,14 +238,19 @@
             <div class="col-md-4">
               <div class="card">
                 <div class="card-body text-center">
-                  <div class="circle circle-large bg-orange">
-                    30<br />Total IPO
+                  <div class="circle circle-large bg-orange align-items-center">
+                    <h4 class="fs-3">30</h4>
+                    <h6 class="fs-4">Total IPO</h6>
                   </div>
-                  <div class="circle circle-medium bg-purple mt-3">
-                    9<br />IPO in Loss
+                  <div
+                    class="circle circle-medium bg-purple align-items-center"
+                  >
+                    <h4 class="fs-4">9</h4>
+                    <h6 class="fs-5">IPO in Loss</h6>
                   </div>
-                  <div class="circle circle-small bg-blue mt-3">
-                    20<br />IPO in Gain
+                  <div class="circle circle-small bg-blue align-items-center">
+                    <h4 class="fs-5">20</h4>
+                    <h6 class="fs-6">IPO in Gain</h6>
                   </div>
                 </div>
               </div>
